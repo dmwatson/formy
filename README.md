@@ -60,6 +60,8 @@ To clear a form, use `clearForm()`:
 $('.form-box').clearForm();
 ```
 
+If a field has a `data-default` attribute that is set to a value, then when the form is cleared that value will be set to the field's value.
+
 ### Clearing Form Errors
 
 If you use Bootstrap or similar error classes, you can clear them out with `clearFormErrors()`:
