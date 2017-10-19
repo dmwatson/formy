@@ -8,7 +8,7 @@ This is essentially version 1.0 as released to the public. I hadn't intended on 
 
 ## How to Use
 
-Formy was designed so you don't have to follow a rigid order to get it going. You don't even need to have a `<form>` element wrapping your input elements if you want. All you need is a parent element of any type that wraps everything, which could be a <div>, a <table>, whatever.
+Formy was designed so you don't have to follow a rigid order to get it going. You don't even need to have a `<form>` element wrapping your input elements if you want. All you need is a parent element of any type that wraps everything, which could be a `<div>`, a `<table>`, whatever.
 
 ### Example structure
 
