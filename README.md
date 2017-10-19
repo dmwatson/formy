@@ -52,7 +52,61 @@ if ( !$('.form-box').checkFormValidation() ) {
 }
 ```
 
+### Clearing a Form
 
+To clear a form, use `clearForm()`:
+
+```javascript
+$('.form-box').clearForm();
+```
+
+### Clearing Form Errors
+
+If you use Bootstrap or similar error classes, you can clear them out with `clearFormErrors()`:
+
+```javascript
+$('.form-box').clearFormErrors();
+```
+
+### Toggle a Form on and off
+
+Turn all of a form's elements on and off with `toggleForm()`:
+
+```javascript
+
+// Disable everything on a form
+$('.form-box').toggleForm(false);
+
+// Enable everything
+$('.form-box').toggleForm(true);
+```
+
+### Make fields numeric-only inputs
+
+If you want to make a field numeric-only, use `numericOnly()`:
+
+```javascript
+$('[name="name"]').numericOnly();
+```
+
+This will allow *only* numbers. If you want to allow decimals as well, set the `allowFloat` option:
+
+```javascript
+$('[name="name"]').numericOnly({ 
+	allowFloat: true
+});
+```
+
+And lastly, if you want to align numeric inputs to the right inside the field, use the `alignRight` option:
+
+```javascript
+$('[name="name"]').numericOnly({ 
+	allowFloat: false,
+	alignRight: true
+});
+```
+
+By default `alignRight` is set to `true`.
 
 ## License
 
