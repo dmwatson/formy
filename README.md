@@ -108,6 +108,60 @@ $('[name="name"]').numericOnly({
 
 By default `alignRight` is set to `true`.
 
+### Getting Form Data
+
+To get all of the data from a form's named fields (i.e., anything with a `name` attribute), use `getFormData()`:
+
+```javascript
+var myData = $('.form-box').getFormData();
+```
+
+Data can then be passed via `$.post()` or `$.getJSON()` as the data argument.
+
+**Note: If you have any checkboxes that are named, Formy will automatically convert the checked/unchecked values to a 1 or 0.
+
+### Setting form data
+
+If you want to quickly set a form's data, for example in a `$.post()` callback, you can use `setFormData()`:
+
+```javascript
+$.post('my/script/to-get-data', {key: someKey}, function(data) {
+	if ( data ) {
+		$('.form-box').setFormData( data );
+	}
+},'json');
+```
+
+Any items with the same name in data as the named fields in your form will be populated. For instance, if you have a data element returned named `name`, and a form field also named `name`, then it will automatically set it.
+
+### Imploding Checkbox Values
+
+If you have a series of checkboxes with a common class but different values and want to concatenate them into a delimited string, use `implodeValues()`:
+
+```javascript
+var carrierIDs = $('.carrier-checkbox').implodeValues();
+```
+
+`implodeValues` returns a delimited string with all checked values. Anything unchecked will not have values in the string.
+
+By default, the delimiter is the pipe `|` character. If you want to use a different delimiter such as a comma, you can pass it in as an argument:
+
+```javascript
+// Get data as a comma-delimited string
+var carrierIDs = $('.carrier-checkbox').implodeValues(',');
+```
+
+### Check if a form has errors
+
+If you are using required form field validation, or have your own validator that sets a `has-error` class, you can go back and check if there are errors in your form with `hasErrors()`:
+
+```javascript
+if ( $('.form-box').hasErrors() ) {
+	// Oops, we have errors!
+	return;
+}
+```
+
 ## License
 
 Formy is releasd under the MIT License. Do whatever you want with it. If it breaks anything, you get to keep both pieces.

@@ -1,9 +1,15 @@
 /*
 	Formy library
 */
+
+/*
+	Support Functions
+*/
 String.prototype.trim = function() {
 	return this.replace(/^\s+|\s+$/g,"");
 }
+
+$.fn.hasAttr = function(attr) { var attribVal = this.attr(attr); return (attribVal !== undefined) && (attribVal !== false); };
 
 (function ($) {
 	
