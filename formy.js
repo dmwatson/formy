@@ -1,6 +1,10 @@
 /*
 	Formy library
 */
+String.prototype.trim = function() {
+	return this.replace(/^\s+|\s+$/g,"");
+}
+
 (function ($) {
 	
 	$.fn.setRequiredFields = function() {
